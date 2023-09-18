@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 
-const  Counter=()=> {
+const Counter = () => {
   const [count, setCount] = useState(0);
 
   const increment = () => {

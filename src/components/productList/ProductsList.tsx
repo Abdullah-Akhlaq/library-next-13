@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 interface IUserList {
@@ -10,14 +11,15 @@ interface IUserList {
 const ProductsList = async () => {
 
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const products = res.json()
-  console.log('https://github.com/saadwaqas688/apple-cart-boiler.git', products);
+  const products: IUserList[] = await res.json()
 
   return (
     <div>
-      ProductsList
+      <i style={{ fontSize: '25px' }}><b> ProductsList </b> </i>
 
-      {/* {products.map((ele: any) => ele.id)} */}
+      {products.map((ele: any) => <div>
+        <b> Title:</b>  {ele.title}
+      </div>)}
     </div>
   )
 }
